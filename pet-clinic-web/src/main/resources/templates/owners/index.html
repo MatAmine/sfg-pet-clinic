@@ -12,6 +12,10 @@
             <th style="width: 150px;">ID</th>
             <th style="width: 150px;">Lastname</th>
             <th style="width: 150px;">Firstname</th>
+            <th style="width: 150px;">Address</th>
+            <th style="width: 150px;">City</th>
+            <th style="width: 150px;">Telephone</th>
+            <th style="width: 150px;">Pets</th>
         </tr>
     </thead>
     <tbody>
@@ -19,6 +23,16 @@
             <td th:text="${owner.id}">1</td>
             <td th:text="${owner.lastName}">Joe</td>
             <td th:text="${owner.firstName}">Blake</td>
+            <td th:text="${owner.address}">123 rue du blabla</td>
+            <td th:text="${owner.city}">Lyon</td>
+            <td th:text="${owner.telephone}">0836656565</td>
+            <td th:if="${#lists.size(owner.pets) > 1}">
+                <select>
+                    <option th:each="pet: ${owner.pets}" th:value="${pet.name}" th:text="${pet.name}">
+                    </option>
+                </select>
+            </td>
+            <td th:if="${#lists.size(owner.pets) == 1}" th:text="${owner.pets[0].name}"></td>
         </tr>
     </tbody>
 </table>
