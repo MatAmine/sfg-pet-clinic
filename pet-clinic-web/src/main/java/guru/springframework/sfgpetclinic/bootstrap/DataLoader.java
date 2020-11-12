@@ -1,7 +1,10 @@
 package guru.springframework.sfgpetclinic.bootstrap;
 
 import guru.springframework.sfgpetclinic.model.*;
-import guru.springframework.sfgpetclinic.services.*;
+import guru.springframework.sfgpetclinic.services.OwnerService;
+import guru.springframework.sfgpetclinic.services.PetTypeService;
+import guru.springframework.sfgpetclinic.services.SpecialityService;
+import guru.springframework.sfgpetclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -66,13 +69,13 @@ public class DataLoader implements CommandLineRunner {
 
         Pet mikesPet = new Pet();
         mikesPet.setPetType(savedPetType1);
-        mikesPet.setBirthDay(LocalDate.now());
+        mikesPet.setBirthDate(LocalDate.now());
         mikesPet.setOwner(owner1);
         mikesPet.setName("Woof");
 
         Pet mikesPet2 = new Pet();
         mikesPet2.setPetType(savedPetType2);
-        mikesPet2.setBirthDay(LocalDate.now());
+        mikesPet2.setBirthDate(LocalDate.now());
         mikesPet2.setOwner(owner1);
         mikesPet2.setName("Miaou");
 
@@ -89,7 +92,7 @@ public class DataLoader implements CommandLineRunner {
 
         Pet fionasPet = new Pet();
         fionasPet.setPetType(savedPetType2);
-        fionasPet.setBirthDay(LocalDate.now().minusMonths(1));
+        fionasPet.setBirthDate(LocalDate.now().minusMonths(1));
         fionasPet.setOwner(owner2);
         fionasPet.setName("Waf");
 
